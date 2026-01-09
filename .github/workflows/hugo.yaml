@@ -1,41 +1,41 @@
-    name: Deploy Hugo Site to Pages
+name: Deploy Hugo Site to Pages
 
-    on:
-      push:
-        branches:
-          - main  # 你的默认分支名，可能是 master
+on:
+  push:
+    branches:
+      - main  # 你的默认分支名，可能是 master
 
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
-      cancel-in-progress: false
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
 
-    jobs:
-      build:
-        runs-on: ubuntu-latest
-        steps:
-          - name: Checkout
-            uses: actions/checkout@v4
-            with:
-              submodules: recursive
-              fetch-depth: 0
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
 
-          - name: Setup Hugo
-            uses: peaceiris/actions-hugo@v2
-            with:
-              hugo-version: 'latest'
-              extended: true
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+          extended: true
 
-          - name: Build
-            run: hugo --minify
+      - name: Build
+        run: hugo --minify
 
-          - name: Deploy
-            uses: peaceiris/actions-gh-pages@v3
-            with:
-              deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }} # 对应刚才填的私钥 Name
-              external_repository: guomenglun/guomenglun.github.io # 填你的仓库全名
-              publish_dir: ./public
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }} # 对应刚才填的私钥 Name
+          external_repository: guomenglun/guomenglun.github.io # 填你的仓库全名
+          publish_dir: ./public
