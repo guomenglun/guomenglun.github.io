@@ -1,8 +1,8 @@
-baseurl: https://example.com/
+baseurl: https://guomenglun.github.io/
 languageCode: en-us
 theme: hugo-theme-stack
-title: Example Site
-copyright: Example Person
+title: "我的博客"
+copyright: "© 2026 MengLun"
 
 # Theme i18n support
 # Available values: ar, bn, ca, de, el, en, es, fr, hu, id, it, ja, ko, nl, pt-br, th, uk, zh-cn, zh-hk, zh-tw
@@ -88,7 +88,7 @@ params:
         avatar:
             enabled: true
             local: true
-            src: img/avatar.png
+            src: img/avatar.jpg
 
     article:
         math: false
