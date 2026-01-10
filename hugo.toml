@@ -2,7 +2,7 @@ baseURL = "https://guomenglun.github.io/"
 # 注意结尾有个斜杠，且必须是 https
 languageCode = "zh-cn"
 title = "我的博客"
-theme = "Stack"
+theme = "hugo-theme-stack"
 
 # 菜单配置
 [[menu.main]]
