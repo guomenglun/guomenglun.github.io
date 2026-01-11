@@ -88,7 +88,7 @@ params:
         avatar:
             enabled: true
             local: true
-            src: img/avatar.jpg
+            src: /img/avatar_hu_b5976aa1afdc1d2e.png
 
     article:
         math: false
